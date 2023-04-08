@@ -1,8 +1,8 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
 
 # Routes de notre application
 
@@ -10,18 +10,29 @@ controllers:
 
 # Appelle la page d'accueil
 app_home:
-    path: /
-    controller: App\Controller\HomeController::index
-    methods: GET|POST
+  path: /
+  controller: App\Controller\HomeController::index
+  methods: GET|POST
 
 # Pages statiques
 app_legal:
-    path: /mentions
-    controller: App\Controller\StaticPageController::mentionsLegales
-    methods: GET
+  path: /mentions
+  controller: App\Controller\StaticPageController::mentionsLegales
+  methods: GET
 
 app_cookies:
-    path: /confidentialite
-    controller: App\Controller\StaticPageController::politiqueCookies
-    methods: GET
+  path: /confidentialite
+  controller: App\Controller\StaticPageController::politiqueCookies
+  methods: GET
 #--------------------------
+
+# Back Office
+app_admin:
+  path: /admin
+  controller: App\Controller\AdminController::dashboard
+  methods: GET
+
+app_membre:
+  path: /membre
+  controller: App\Controller\MembreController::dashboard
+  methods: GET
